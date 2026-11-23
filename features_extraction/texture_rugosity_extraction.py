@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-from hsv_extraction import leaf_mask, to_hsv
+from features_extraction.hsv_extraction import leaf_mask, to_hsv
 
 BORDER_KERNEL = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (11,11))
 

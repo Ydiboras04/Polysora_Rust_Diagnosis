@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-from hsv_extraction import leaf_mask, rust_mask, to_hsv
+from features_extraction.hsv_extraction import leaf_mask, rust_mask, to_hsv
 
 # Spots smaller than this (in pixels) are considered noise, not pustules
 MIN_PUSTULE_AREA = 3

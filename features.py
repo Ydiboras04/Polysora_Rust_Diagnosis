@@ -4,10 +4,10 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from hsv_extraction import leaf_mask, pct_rouille, rust_mask, to_hsv
+from features_extraction.hsv_extraction import leaf_mask, pct_rouille, rust_mask, to_hsv
 from load_dataset import iterate_dataset
-from pustule_extraction import densite_pustules
-from texture_rugosity_extraction import inner_leaf_mask, rugosite, sobel_magnitude
+from features_extraction.pustule_extraction import densite_pustules
+from features_extraction.texture_rugosity_extraction import inner_leaf_mask, rugosite, sobel_magnitude
 
 # Features computed for each image
 FEATURES = {
