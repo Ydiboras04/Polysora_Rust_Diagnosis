@@ -15,10 +15,6 @@ def sobel_magnitude(img_bgr):
 
 def inner_leaf_mask(img_bgr):
     leaf = leaf_mask(to_hsv(img_bgr))
-    return cv2.eride(leaf, BORDER_KERNEL)
-
-def rugosite(img_bgr):
-    leaf = leaf_mask(to_hsv(img_bgr))
     return cv2.erode(leaf, BORDER_KERNEL)
 
 def rugosite(img_bgr):
