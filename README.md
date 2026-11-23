@@ -14,11 +14,11 @@ pip install -r requirements.txt
 ## Dataset
 
 The dataset is not stored in the repository. Download it from the
-[`dataset-v1` release](https://github.com/Ydiboras04/Polysora_Rust_Diagnosis/releases/tag/dataset-v1)
+[`Dataset - v1` release](https://github.com/Ydiboras04/Polysora_Rust_Diagnosis/releases/tag/Dataset)
 and unzip it at the project root:
 
 ```bash
-gh release download dataset-v1
+gh release download Dataset
 unzip dataset_v1.zip
 ```
 
