@@ -7,7 +7,7 @@ import numpy as np
 
 CLASSES = {
     "saines": 0,
-    "Common_Rust": 1,
+    "malades": 1,
 }
 
 EXTENSIONS = {
