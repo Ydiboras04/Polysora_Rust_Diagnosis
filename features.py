@@ -6,12 +6,14 @@ import numpy as np
 
 from hsv_extraction import leaf_mask, pct_rouille, rust_mask, to_hsv
 from load_dataset import iterate_dataset
+from pustule_extraction import densite_pustules
 from texture_rugosity_extraction import inner_leaf_mask, rugosite, sobel_magnitude
 
-# Features computed for each image (add your own variable here later)
+# Features computed for each image
 FEATURES = {
     "pct_rouille": pct_rouille,
     "rugosite": rugosite,
+    "densite_pustules": densite_pustules,
 }
 
 
@@ -34,7 +36,9 @@ def save_debug(image_id, img_bgr, out_dir):
     mag_vis = cv2.cvtColor(mag_vis, cv2.COLOR_GRAY2BGR)
 
     panel = np.hstack([img_bgr, leaf_vis, overlay, mag_vis])
-    text = f"pct_rouille={pct_rouille(img_bgr):.3f}  rugosite={rugosite(img_bgr):.1f}"
+    text = (f"pct_rouille={pct_rouille(img_bgr):.3f}  "
+            f"rugosite={rugosite(img_bgr):.1f}  "
+            f"densite={densite_pustules(img_bgr):.2f}")
     cv2.putText(panel, text, (10, 25),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
 
@@ -70,7 +74,7 @@ def main():
 
     for name in FEATURES:
         print(f"\n{name}")
-        for label, cls in [(0, "saines"), (1, "healthy")]:
+        for label, cls in [(0, "healthy"), (1, "diseased")]:
             v = np.array(values[name][label])
             print(f"  {cls:8s} (n={len(v)}): mean={v.mean():.3f}  "
                   f"median={np.median(v):.3f}  min={v.min():.3f}  max={v.max():.3f}")
