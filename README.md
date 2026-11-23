@@ -19,15 +19,15 @@ and unzip it at the project root:
 
 ```bash
 gh release download dataset-v1
-unzip dataset-v1.zip
+unzip dataset_v1.zip
 ```
 
 Expected layout:
 
 ```
 dataset/
-├── Common_Rust/   # diseased leaves (label 1)
-└── saines/        # healthy leaves (label 0)
+├── malades/   # diseased leaves (label 1)
+└── saines/    # healthy leaves (label 0)
 ```
 
 ## Usage
