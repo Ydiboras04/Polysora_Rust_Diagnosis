@@ -1,0 +1,3 @@
+HSV = Hue Saturation Luminosity
+Pixel considéré comme rouille:  5 < H < 28; 80 < S < 255; 50 < V < 255
+pct_rouille = pixles rouille / pixels feuille 
